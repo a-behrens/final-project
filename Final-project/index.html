@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html ng-App="KRRclass" lang="en">
+<head>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  <!-- jQuery CDN -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">                      <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">                         <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SemanticWeb App</title> 
+
+</head>
+<body ng-controller="MainCtrl">
+  <!-- nav bar -->
+<nav id="nav" class="navbar navbar-expand-lg ">
+    <a id="navbar_brand" class="navbar-brand" href="index.html"><cite>SemanticWeb app</cite></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a id="navbar_text" class="nav-link" href="#second_divider">ART <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+            <a id="navbar_text" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ARTISTS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="rembranndt.html">Rembrandt van Rijn</a>
+              <a class="dropdown-item" href="Dali.html">Salvador Dali</a>
+              <a class="dropdown-item" href="van.html">Vincent van Gogh</a>
+              <a class="dropdown-item" href="picasso.html">Pablo Picasso</a>
+              <a class="dropdown-item" href="da.html">Leonardo da Vinci</a>
+
+            </div>
+          </li>
+        </ul>
+        <a id="nav-continue" class="nav-link" href="picasso.html">START EXPLORING</a>
+        <i id="arrow" class="fas fa-angle-right fa-lg"></i>
+      </div>
+</nav>
+<div class="container-fluid">
+  <div id="jumbotron_home" class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <p id="jumbotron_header">PAINTERS WEB APP</p>
+    </div>
+  </div>
+  <!-- JUMBOTRON MESSAGE -->
+  <div class="container">
+    <div class="mt-1 pb-4 ">
+      <p id="home_message" class="lead text-center">
+    Find and see data about the most famous painters.</p>
+    </div>
+  </div>
+</div>
+<!-- SECTION 1: IDEA -->
+ <div class="container">
+    <hr class="trans--grow hr2">
+      <h2 id="second_h2" class="col-md-12 "> Discover interesting data and information:</h2>
+  </div>
+  <div class="container">
+    
+    <div class="container mb-5">
+  
+
+       <div class="container mb-5">
+     
+    
+     <div class="container mt-5 mb-5">
+       <div class="row justify-content-md-center">
+         <div class="col-md-auto">
+           <h3 class="lead">Hover over the charts and graphs with your mouse and expplore the data we have avaliable!</h3> 
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-6">
+         <div class="card" >
+           <div class="card-body">
+             <h5 class="lead card-title text-center">Each color represents a different painter in our database</h5>
+              <canvas class="chart chart-doughnut" chart-data="myInstances" chart-labels="myClasses"></canvas>
+             <p class="card-text">{{artistQuery}}</p>
+           </div>
+         </div>
+         </div>
+       
+         <div class="col-6">
+         <div class="card" >
+           <div class="card-body">
+             <h5 class="lead card-title text-center">Each color represents a different artistic genre in our database</h5>
+                  <canvas class="chart chart-pie" chart-data="myInstances2" chart-labels="myClasses2" > </canvas>
+           <p class="card-text">{{genreQuery}} </p>
+            
+           </div>
+         </div>
+         </div>
+       </div>
+     </div>  
+<!-- secod part of data visualization -->
+     <div class="container">
+       <div class="row justify-content-md-center">
+       </div>
+       <div class="row">
+         <div class="col-12">
+         <div class="card" >
+           <div class="card-body">
+             <h5 class="lead card-title text-center">From where are the painters that we have in our databse?</h5>
+              <canvas class="chart chart-bar" chart-data="myInstances3" chart-labels="myClasses3"></canvas>
+             
+           </div>
+         </div>
+         </div>
+       
+         
+         </div>
+       </div>
+     </div>   
+
+    <!-- SECTION 2: GALLERY -->
+  <div class="container">
+    <hr id="second_divider" class="trans--grow hr2">
+      <h2 id="second_h2" class="col-md-12 "> Explore some of the painters in detail:</h2>
+  </div>
+  <div id="gallery" class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+        <div class="hovereffect">
+          <img class="img-fluid" src="css/Images/SK-C-5.jpeg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>Rembrandt van Rijn</p>
+                <p>
+                  <button onclick="location.href='rembranndt.html'" id="discover_button" class="btn my-2 my-sm-0 mt-3" href="rembranndt.html" type="submit">Discover more</button>
+                </p>
+            </div>
+        </div>
+     </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+        <div class="hovereffect">
+          <img class="img-fluid" src="css/Images/dali.jpg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>Slavador Dali</p>
+                <p>
+                  <button onclick="location.href='dali.html'" id="discover_button" class="btn my-2 my-sm-0 mt-3" type="submit">Discover more</button>
+                </p>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+        <div class="hovereffect">
+          <img class="img-fluid" src="css/Images/van.jpg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>Vincent Van Gogh</p>
+                <p>
+                  <button onclick="location.href='van.html'" id="discover_button" class="btn my-2 my-sm-0 mt-3" type="submit">Discover more</button>
+                </p>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="hovereffect">
+          <img class="img-fluid" src="css/Images/lisa.jpg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>Leonardo da Vinci</p>
+                <p>
+                  <button onclick="location.href='da.html'" id="discover_button" class="btn my-2 my-sm-0 mt-3" type="submit">Discover more</button>
+                </p>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="hovereffect">
+          <img class="img-fluid" src="css/Images/picas.jpg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>Pablo Picasso</p>
+                <p>
+                  <button onclick="location.href='picasso.html'" id="discover_button" class="btn my-2 my-sm-0 mt-3" type="submit">Discover more</button>
+                </p>
+            </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <div class="row">
+        <div class="container">
+            <div class="col-6 float-right">    
+                <a id="ghost-button-foward" class="lead" href="picasso.html">Start Exploring<i id="arrow-foward" class="fas fa-angle-right fa-lg"></i></a>
+            </div>
+        </div>
+    </div>  
+  </div>
+
+  <script src="js/animate.js"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  
+  <script src="js/Chart.min.js"></script>
+  <script src="js/angular-chart.min.js"></script>
+  
+  <script src="main.js"></script>
+  <script src="js/logic.js"></script>
+
+</body>
+</html>
